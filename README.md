@@ -1,4 +1,9 @@
 # Shopify: Recormendations by metafield
+
+```diff
+This example was tested on the Venture Theme, results may differ between themes
+```
+
 ## Admin
  * Add metafield in Admin under Product Category `Product Recommendation Tag` it will generate the namespace and key as `my_fields.product_recommendation_tag`. 
    Click "select content type", select Text and leave as default. Save.
