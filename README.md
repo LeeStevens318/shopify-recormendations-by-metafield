@@ -17,4 +17,4 @@ This example was tested on the Venture Theme, results may differ between themes
 For example, we will use a main product and available accessories for that product:
 
  * Go into each main product and set the metafield value
- * Now add that value to each accessory product this will make it show on the main product
+ * Now add that value as a `Tag` on each accessory product this will make it show on the main product
