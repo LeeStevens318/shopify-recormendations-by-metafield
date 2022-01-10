@@ -6,7 +6,7 @@
 ## Theme
  * Copy Liquid Template "product-recommendations-metafield.liquid" in Sections
  * Copy Liquid Template "product-card-cart.liquid" in Snippets
- * Add to product.liquid under Templates `{% section 'product-recommendations-metafield' %}`
+ * Add `{% section 'product-recommendations-metafield' %}` to product.liquid in Templates (see example file)
 
 ## Products
 For example, we will use a Main product and available accessories for that product:
