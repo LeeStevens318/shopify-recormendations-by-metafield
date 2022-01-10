@@ -1,0 +1,50 @@
+{%- assign current_product = product -%}
+{%- assign current_product_tags = product.tags -%}
+{%- assign current_product_recommendation = product.metafields.my_fields.product_recommendation_tag -%}
+
+{%- if current_product_recommendation != '' -%}
+
+<div class="product-recommendation-metafield">
+	<div class="page-width">
+			<div class="section-block__header text-center">
+            <h4 class="h1--mini section-block__title">{{ section.settings.heading | escape }}</h4>
+        </div>
+
+        <div class="section-block">
+            <div class="grid grid--no-gutters grid--uniform">
+
+                {%- paginate collections.all.products by 1000 -%}
+                    {%- for product in collections.all.products -%}
+                        {%- unless product.handle == current_product.handle -%}
+                            {%- if product.tags contains current_product_recommendation -%}
+                                <div class="grid__item small--one-half medium-up--one-fifth{% if forloop.index == 6 %} medium-up--hide{% endif %}">
+                                    {%- include 'product-card-cart', product: product, collection: collection -%}
+                                </div>	
+                            {%- endif -%}
+                        {%- endunless -%}
+                    {%- endfor -%}
+                {%- endpaginate -%}
+
+            </div>
+        </div>
+	</div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+   "name": "Recommendations by Meta",
+   "tag": "section",
+   "settings": [
+      {
+         "type":"header",
+         "content":"Section info"
+      },
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      }
+   ]
+}
+{% endschema %}
